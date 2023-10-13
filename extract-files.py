@@ -39,7 +39,6 @@ lib_fixups: lib_fixups_user_type = {
         'com.qualcomm.qti.dpm.api@1.0',
         'libmmosal',
         'vendor.qti.diaghal@1.0',
-        'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
     ): lib_fixup_vendor_suffix,
 }
@@ -68,8 +67,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libmisight.so': blob_fixup()
         .add_needed('libjsoncpp_shim.so')
         .add_needed('libmisightjson_shim.so'),
-    'system_ext/lib64/libwfdnative.so': blob_fixup()
-        .add_needed('libinput_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
