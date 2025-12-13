@@ -4,3 +4,6 @@ ro.camera.                          u:object_r:vendor_camera_sensor_prop:s0
 
 # Global
 ro.product.marketname               u:object_r:build_prop:s0
+
+# Hardware
+ro.hardware.chipname                u:object_r:exported_default_prop:s0
