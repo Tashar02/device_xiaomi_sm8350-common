@@ -195,8 +195,7 @@ PRODUCT_PACKAGES += \
 
 ifeq ($(TARGET_HAS_UDFPS),true)
 PRODUCT_PACKAGES += \
-    libudfpshandler \
-    sensors.xiaomi.v2
+    libudfpshandler
 
 PRODUCT_PACKAGES += \
     FrameworkOverlayUDFPS
@@ -425,6 +424,14 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.xiaomi-multihal
+
+ifeq ($(TARGET_HAS_UDFPS),true)
+PRODUCT_PACKAGES += \
+    sensors.xiaomi.v2
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_ODM)/etc/sensors/hals.conf
+endif
 
 # Shim
 PRODUCT_PACKAGES += \
