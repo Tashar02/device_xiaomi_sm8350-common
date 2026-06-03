@@ -384,6 +384,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Platform
 TARGET_BOARD_PLATFORM := lahaina
 
+# Pixel Features Spoof (for Google Photos)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sysconfig_features.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sysconfig_features.xml
+
 # Power
 TARGET_PROVIDES_POWERHAL := true
 
