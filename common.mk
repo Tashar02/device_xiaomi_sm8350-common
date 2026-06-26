@@ -182,10 +182,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
-# Fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd
-
 # Filesystem
 PRODUCT_PACKAGES += \
     e2fsck_ramdisk \
