@@ -45,10 +45,6 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'system/framework/WfdCommon.jar': blob_fixup()
-        .apktool_patch('blob-patches/WfdCommon.patch'),
-    'system_ext/lib64/libwfdservice.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
     ('vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc', 'vendor/etc/init/vendor.qti.media.c2@1.0-service.rc'): blob_fixup()
         .regex_replace('writepid /dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh'),
     'vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc': blob_fixup()
@@ -72,6 +68,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libmisight.so': blob_fixup()
         .add_needed('libjsoncpp_shim.so')
         .add_needed('libmisightjson_shim.so'),
+    'system_ext/lib64/libwfdnative.so': blob_fixup()
+        .add_needed('libinput_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
