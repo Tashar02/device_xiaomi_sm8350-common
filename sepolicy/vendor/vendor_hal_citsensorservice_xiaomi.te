@@ -15,7 +15,7 @@ allow vendor_hal_citsensorservice_xiaomi self:{ socket qipcrtr_socket } create_s
 allowxperm vendor_hal_citsensorservice_xiaomi self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 allow vendor_hal_citsensorservice_xiaomi_default fwk_sensor_hwservice:hwservice_manager find;
-allow vendor_hal_citsensorservice_xiaomi_default system_server:binder call;
+allow vendor_hal_citsensorservice_xiaomi_default system_server:binder { call transfer };
 
 r_dir_file(vendor_hal_citsensorservice_xiaomi_default, vendor_sysfs_graphics)
 
