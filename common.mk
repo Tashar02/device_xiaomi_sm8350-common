@@ -434,6 +434,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.xiaomi-multihal
 
+PRODUCT_PACKAGES += \
+    sensor-notifier
+
 ifeq ($(TARGET_HAS_UDFPS),true)
 PRODUCT_PACKAGES += \
     sensors.xiaomi.v2

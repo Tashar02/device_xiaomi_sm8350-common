@@ -48,8 +48,6 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('writepid /dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh'),
     'vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc': blob_fixup()
         .regex_replace('writepid /dev/stune/nnapi-hal/tasks', 'task_profiles NNApiHALPerformance'),
-    'vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc': blob_fixup()
-        .add_line_if_missing('    task_profiles ServiceCapacityLow'),
     ('vendor/etc/media_lahaina/video_system_specs.json', 'vendor/etc/media_shima_v1/video_system_specs.json', 'vendor/etc/media_yupik_v1/video_system_specs.json'): blob_fixup()
         .regex_replace('"max_retry_alloc_output_timeout": 10000,', '"max_retry_alloc_output_timeout": 0,'),
     'vendor/etc/vintf/manifest/c2_manifest_vendor.xml': blob_fixup()
@@ -64,8 +62,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libsnapdragoncolor-manager.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
-    'vendor/lib64/libmisight.so': blob_fixup()
-        .add_needed('libjsoncpp_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
