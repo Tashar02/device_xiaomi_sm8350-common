@@ -65,8 +65,7 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/lib64/libmisight.so': blob_fixup()
-        .add_needed('libjsoncpp_shim.so')
-        .add_needed('libmisightjson_shim.so'),
+        .add_needed('libjsoncpp_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
